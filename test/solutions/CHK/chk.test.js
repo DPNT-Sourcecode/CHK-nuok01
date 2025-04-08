@@ -35,6 +35,7 @@ describe('should apply special offers', () => {
     it('should apply single special offer', () => {
         expect(checkout('AAA')).toBe(130);
         expect(checkout('BB')).toBe(45);
+        expect(checkout('AAAAA')).toBe(200);
     });
 
     it('should handle multiple special offers', () => {
@@ -50,6 +51,7 @@ describe('should apply special offers', () => {
         expect(checkout('AAAAAABBBB')).toBe(350);
     });
 });
+
 
 
 
