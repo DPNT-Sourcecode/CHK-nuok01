@@ -23,6 +23,7 @@ describe('should handle basic cases', () => {
         expect(checkout('C')).toBe(20);
         expect(checkout('D')).toBe(15);
         expect(checkout('E')).toBe(40);
+        expect(checkout('F')).toBe(10);
     });
 
     it('should calculate total for multiple items', () => {
@@ -31,6 +32,7 @@ describe('should handle basic cases', () => {
         expect(checkout('CCB')).toBe(70);
         expect(checkout('EEA')).toBe(130);
         expect(checkout('DDC')).toBe(50);
+        expect(checkout('FAB')).toBe(90);
     });
 });
 
@@ -58,6 +60,7 @@ describe('should apply special offers', () => {
         expect(checkout('AAAAAAAAAA')).toBe(400);
         expect(checkout('BBBB')).toBe(90);
         expect(checkout('EEEEBB')).toBe(160);
+        expect(checkout('FFFFFF')).toBe(40);
     });
 });
 
