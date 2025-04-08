@@ -22,12 +22,15 @@ describe('should handle basic cases', () => {
         expect(checkout('B')).toBe(30);
         expect(checkout('C')).toBe(20);
         expect(checkout('D')).toBe(15);
+        expect(checkout('E')).toBe(40);
     });
 
     it('should calculate total for multiple items', () => {
         expect(checkout('AB')).toBe(80);
         expect(checkout('AA')).toBe(100);
         expect(checkout('CCB')).toBe(70);
+        expect(checkout('EEA')).toBe(130);
+        expect(checkout('DDC')).toBe(50);
     });
 });
 
@@ -36,21 +39,24 @@ describe('should apply special offers', () => {
         expect(checkout('AAA')).toBe(130);
         expect(checkout('BB')).toBe(45);
         expect(checkout('AAAAA')).toBe(200);
+        expect(checkout('EEB')).toBe(80);
     });
 
     it('should handle multiple special offers', () => {
         expect(checkout('AAABB')).toBe(130 + 45);
         expect(checkout('ABABA')).toBe(130 + 45);
+        expect(checkout('AAAAAEEBAAABB')).toBe(200 + 45 + 130);
     });
 
     it('should handle multiple instances of special offers', () => {
-        expect(checkout('AAAAA')).toBe(230);
+        expect(checkout('AAAAAAAA')).toBe(130 + 200);
         expect(checkout('AAAAAA')).toBe(260);
         expect(checkout('BBB')).toBe(75);
         expect(checkout('BBBB')).toBe(90);
         expect(checkout('AAAAAABBBB')).toBe(350);
     });
 });
+
 
 
 
