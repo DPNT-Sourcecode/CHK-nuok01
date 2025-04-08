@@ -13,14 +13,15 @@
     "url": "git+https://github.com/julianghionoiu/tdl-warmup.git"
   },
   "dependencies": {
+    "jest": "^29.7.0",
     "properties-reader": "~2.3.0",
     "tdl-client-nodejs": "0.29.5"
   },
   "devDependencies": {
-    "nyc": "~17.1.0",
-    "prettier": "~3.5.3",
     "diveSync": "~0.3.0",
-    "mocha": "~11.1.0"
+    "mocha": "~11.1.0",
+    "nyc": "~17.1.0",
+    "prettier": "~3.5.3"
   },
   "engines": {
     "node": ">=22.14.0",
@@ -37,3 +38,4 @@
   },
   "homepage": "https://github.com/io-accelerate/tdl-runner-nodejs#readme"
 }
+
