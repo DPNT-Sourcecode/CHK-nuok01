@@ -1,4 +1,6 @@
-const checkout = require('../../../lib/solutions/CHK/checkout_solution');
+const CheckoutSolution = require('../../../lib/solutions/CHK/checkout_solution');
+const checkoutSolution = new CheckoutSolution();
+const checkout = checkoutSolution.checkout;
 
 describe('should handle basic cases', () => {
     it('should return 0 for empty string', () => {
@@ -30,3 +32,4 @@ describe('should handle basic cases', () => {
         expect(checkout('AAABB')).toBe(130 + 45);
     });
 });
+
