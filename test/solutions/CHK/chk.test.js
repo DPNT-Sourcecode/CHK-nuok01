@@ -77,7 +77,9 @@ describe('should apply special offers', () => {
         expect(checkout('EABAFEF')).toBe(200);
         expect(checkout('AAAAABBBEEFFFHHHHH')).toBe(390);
         expect(checkout('KKNNNMOPQQRRUUUUVVVWXYZ')).toBe(910);
-        expect(checkout('AAAAABBBEEFFFHHHHHKKNNNMOPQQRRUUUUVVVWXYZ')).toBe(1300);
+        expect(checkout('AAAAABBBEEFFFHHHHHKKNNNMOPQQRRUUUUVVVWXYZ')).toBe();
+        expect(checkout('AAAAABBBEEFFFHHHHHKKNNNMOPQQRRUUUUVVVSTXYZ')).toBe(1182);
+
     });
 
     it('should handle multiple instances of special offers', () => {
@@ -172,4 +174,5 @@ describe('should apply special offers', () => {
         expect(checkout('VVVVVV')).toBe(260);
     });
 });
+
 
