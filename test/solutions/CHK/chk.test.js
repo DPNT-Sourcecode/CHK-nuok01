@@ -28,7 +28,7 @@ describe('should handle basic cases', () => {
         expect(checkout('H')).toBe(10);
         expect(checkout('I')).toBe(35);
         expect(checkout('J')).toBe(60);
-        expect(checkout('K')).toBe(80);
+        expect(checkout('K')).toBe(70);
         expect(checkout('L')).toBe(90);
         expect(checkout('M')).toBe(15);
         expect(checkout('N')).toBe(40);
@@ -36,14 +36,14 @@ describe('should handle basic cases', () => {
         expect(checkout('P')).toBe(50);
         expect(checkout('Q')).toBe(30);
         expect(checkout('R')).toBe(50);
-        expect(checkout('S')).toBe(30);
+        expect(checkout('S')).toBe(20);
         expect(checkout('T')).toBe(20);
         expect(checkout('U')).toBe(40);
         expect(checkout('V')).toBe(50);
         expect(checkout('W')).toBe(20);
-        expect(checkout('X')).toBe(90);
-        expect(checkout('Y')).toBe(10);
-        expect(checkout('Z')).toBe(50);
+        expect(checkout('X')).toBe(17);
+        expect(checkout('Y')).toBe(20);
+        expect(checkout('Z')).toBe(21);
     });
 
     it('should calculate total for multiple items', () => {
@@ -75,6 +75,8 @@ describe('should apply special offers', () => {
         expect(checkout('FFFEEB')).toBe(100);
         expect(checkout('AAABBEEFFF')).toBe(260);
         expect(checkout('EABAFEF')).toBe(200);
+        expect(checkout('AAAAABBBEEFFFHHHHH')).toBe(390);
+        expect(checkout('KKNNNMOPQQRRUUUUVVVWXYZ')).toBe(910);
         expect(checkout('AAAAABBBEEFFFHHHHHKKNNNMOPQQRRUUUUVVVWXYZ')).toBe(1300);
     });
 
@@ -131,8 +133,8 @@ describe('should apply special offers', () => {
     });
 
     it('handle special offers for K', () => {
-        expect(checkout('KK')).toBe(150);
-        expect(checkout('KKK')).toBe(230);
+        expect(checkout('KK')).toBe(120);
+        expect(checkout('KKK')).toBe(190);
     });
 
     it('handle special offers for N and M', () => {
@@ -170,3 +172,4 @@ describe('should apply special offers', () => {
         expect(checkout('VVVVVV')).toBe(260);
     });
 });
+
