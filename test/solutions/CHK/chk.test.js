@@ -50,7 +50,7 @@ describe('should apply special offers', () => {
     });
 
     it('should handle multiple instances of special offers', () => {
-        expect(checkout('AAAAAAAA')).toBe(130 + 200);
+        expect(checkout('AAAAAAAA')).toBe(330);
         expect(checkout('AAAAAAAAAA')).toBe(400);
         expect(checkout('BBBB')).toBe(90);
         expect(checkout('EEEEBB')).toBe(80);
