@@ -4,7 +4,7 @@
   "description": "Warmup code to bootstrap the challenge",
   "scripts": {
     "start": "node ./lib/send_command_to_server.js",
-    "test": "node ./node_modules/mocha/bin/mocha test/**/*.js",
+    "test": "node ./node_modules/jest/bin/jest.js",
     "coverage": "nyc --reporter=json-summary --reporter=text npm test",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
@@ -37,5 +37,6 @@
   },
   "homepage": "https://github.com/io-accelerate/tdl-runner-nodejs#readme"
 }
+
 
 
