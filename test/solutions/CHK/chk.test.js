@@ -44,7 +44,6 @@ describe('should handle basic cases', () => {
         expect(checkout('X')).toBe(90);
         expect(checkout('Y')).toBe(10);
         expect(checkout('Z')).toBe(50);
-        
     });
 
     it('should calculate total for multiple items', () => {
@@ -54,6 +53,7 @@ describe('should handle basic cases', () => {
         expect(checkout('EEA')).toBe(130);
         expect(checkout('DDC')).toBe(50);
         expect(checkout('FAB')).toBe(90);
+        
     });
 });
 
@@ -75,6 +75,7 @@ describe('should apply special offers', () => {
         expect(checkout('FFFEEB')).toBe(100);
         expect(checkout('AAABBEEFFF')).toBe(260);
         expect(checkout('EABAFEF')).toBe(200);
+        expect(checkout('AAAAABBBEEFFFHHHHHKKNNNMOPQQRRUUUUVVVWXYZ')).toBe(1300);
     });
 
     it('should handle multiple instances of special offers', () => {
@@ -120,7 +121,47 @@ describe('should apply special offers', () => {
         expect(checkout('FFFFFFF')).toBe(50);
         expect(checkout('FFFFFFFF')).toBe(60);
         expect(checkout('FFFFFFFFF')).toBe(60);
+    });
 
+    it('handle special offers for H', () => {
+        expect(checkout('HHHHH')).toBe(45);
+        expect(checkout('HHHHHH')).toBe(55);
+        expect(checkout('HHHHHHHHHH')).toBe(80);
+        expect(checkout('HHHHHHHHHHH')).toBe(90);
+    });
+
+    it('handle special offers for K', () => {
+        expect(checkout('KK')).toBe(150);
+        expect(checkout('KKK')).toBe(230);
+    });
+
+    it('handle special offers for P', () => {
+        expect(checkout('PPPPP')).toBe(200);
+        expect(checkout('PPPPPP')).toBe(250);
+    });
+
+    it('handle special offers for Q and R', () => {
+        expect(checkout('QQQ')).toBe(80);
+        expect(checkout('QQQQ')).toBe(110);
+        expect(checkout('RRRQ')).toBe(150);
+        expect(checkout('RRRQQ')).toBe(180);
+    });
+
+    it('handle special offers for U', () => {
+        expect(checkout('UUU')).toBe(120);
+        expect(checkout('UUUU')).toBe(120);
+        expect(checkout('UUUUU')).toBe(160);
+        expect(checkout('UUUUUUUU')).toBe(240);
+    });
+
+    it('handle special offers for V', () => {
+        expect(checkout('V')).toBe(50);
+        expect(checkout('VV')).toBe(90);
+        expect(checkout('VVV')).toBe(130);
+        expect(checkout('VVVV')).toBe(180);
+        expect(checkout('VVVVV')).toBe(220);
+        expect(checkout('VVVVVV')).toBe(260);
     });
 });
+
 
