@@ -6,4 +6,3 @@ describe('HelloSolution outputs expected string', () => {
         expect(helloSolution.hello('John')).toBe('Hello, John!');
     });
 });
-

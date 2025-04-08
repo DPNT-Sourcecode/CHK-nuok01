@@ -1,9 +1,8 @@
-const { checkout, prices, specials } = require('../../../lib/solutions/CHK/checkout_solution');
+const CheckoutSolution = require('../../../lib/solutions/CHK/checkout_solution');
 
 describe('should handle basic cases', () => {
     it('should return 0 for empty string', () => {
-        console.log(checkout(''));
-        expect(checkout('')).toBe(0);
+        expect(CheckoutSolution.checkout('')).toBe(0);
     });
 
     it('should return -1 for invalid skus', () => {
@@ -11,16 +10,16 @@ describe('should handle basic cases', () => {
     });
 
     it('should calculate total for single item', () => {
-        expect(checkout('A')).toBe(prices.A);
-        expect(checkout('B')).toBe(prices.B);
-        expect(checkout('C')).toBe(prices.C);
-        expect(checkout('D')).toBe(prices.D);
+        expect(checkout('A')).toBe(50);
+        expect(checkout('B')).toBe(30);
+        expect(checkout('C')).toBe(20);
+        expect(checkout('D')).toBe(15);
     });
 
     it('should calculate total for multiple items', () => {
-        expect(checkout('AB')).toBe(prices.A + prices.B);
-        expect(checkout('AA')).toBe(prices.A * 2);
-        expect(checkout('CCB')).toBe(prices.C + prices.C + prices.B);
+        expect(checkout('AB')).toBe(80);
+        expect(checkout('AA')).toBe(100);
+        expect(checkout('CCB')).toBe(70);
     });
 
     it('should apply special offers', () => {
