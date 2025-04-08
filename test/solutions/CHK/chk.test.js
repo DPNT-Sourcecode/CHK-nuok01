@@ -175,6 +175,8 @@ describe('should apply special offers', () => {
     });
 
     it('handle group offers', () => {
+        expect(checkout('S')).toBe(20);
+        expect(checkout('ST')).toBe(40);
         expect(checkout('STX')).toBe(45);
         expect(checkout('STXZST')).toBe(90);
         expect(checkout('STXSTXST')).toBe(124);
@@ -183,7 +185,8 @@ describe('should apply special offers', () => {
 
     it('handle group offers with other items', () => {
         expect(checkout('STXSTXA')).toBe(140);
-        expect(checkout('STXSTXSTXAAA')).toBe(265);
-        expect(checkout('STXSTXSTXSTXAAAAA')).toBe(280);
+        expect(checkout('STXSZXSZXAAA')).toBe(265);
+        expect(checkout('STXZTXZTXSTXAAAAA')).toBe(380);
     });
 });
+
