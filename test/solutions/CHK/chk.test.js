@@ -24,6 +24,27 @@ describe('should handle basic cases', () => {
         expect(checkout('D')).toBe(15);
         expect(checkout('E')).toBe(40);
         expect(checkout('F')).toBe(10);
+        expect(checkout('G')).toBe(20);
+        expect(checkout('H')).toBe(10);
+        expect(checkout('I')).toBe(35);
+        expect(checkout('J')).toBe(60);
+        expect(checkout('K')).toBe(80);
+        expect(checkout('L')).toBe(90);
+        expect(checkout('M')).toBe(15);
+        expect(checkout('N')).toBe(40);
+        expect(checkout('O')).toBe(10);
+        expect(checkout('P')).toBe(50);
+        expect(checkout('Q')).toBe(30);
+        expect(checkout('R')).toBe(50);
+        expect(checkout('S')).toBe(30);
+        expect(checkout('T')).toBe(20);
+        expect(checkout('U')).toBe(40);
+        expect(checkout('V')).toBe(50);
+        expect(checkout('W')).toBe(20);
+        expect(checkout('X')).toBe(90);
+        expect(checkout('Y')).toBe(10);
+        expect(checkout('Z')).toBe(50);
+        
     });
 
     it('should calculate total for multiple items', () => {
@@ -102,3 +123,4 @@ describe('should apply special offers', () => {
 
     });
 });
+
