@@ -9,6 +9,11 @@ describe('should handle basic cases', () => {
 
     it('should return -1 for invalid skus', () => {
         expect(checkout('ABCDX')).toBe(-1);
+        expect(checkout('.xyz')).toBe(-1);
+    });
+
+    it("should handle lower case strings", () => {
+        expect(checkout('abc')).toBe(100);
     });
 
     it('should calculate total for single item', () => {
@@ -32,4 +37,5 @@ describe('should handle basic cases', () => {
         expect(checkout('AAABB')).toBe(130 + 45);
     });
 });
+
 
