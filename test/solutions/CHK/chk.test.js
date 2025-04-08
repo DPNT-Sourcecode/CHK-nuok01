@@ -177,7 +177,7 @@ describe('should apply special offers', () => {
     it('handle group offers', () => {
         expect(checkout('STX')).toBe(45);
         expect(checkout('STXZST')).toBe(90);
-        expect(checkout('STXSTXST')).toBe(130);
+        expect(checkout('STXSTXST')).toBe(124);
         expect(checkout('STXSTXSTX')).toBe(135);
     });
 
@@ -187,7 +187,3 @@ describe('should apply special offers', () => {
         expect(checkout('STXSTXSTXSTXAAAAA')).toBe(280);
     });
 });
-
-
-
-
