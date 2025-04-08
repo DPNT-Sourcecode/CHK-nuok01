@@ -1,8 +1,8 @@
-const CheckoutSolution = require('../../../lib/solutions/CHK/checkout_solution');
+const checkout = require('../../../lib/solutions/CHK/checkout_solution');
 
 describe('should handle basic cases', () => {
     it('should return 0 for empty string', () => {
-        expect(CheckoutSolution.checkout('')).toBe(0);
+        expect(checkout('')).toBe(0);
     });
 
     it('should return -1 for invalid skus', () => {
