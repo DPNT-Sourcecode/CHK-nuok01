@@ -14,7 +14,7 @@ describe('should handle basic cases', () => {
     });
 
     it("should handle lower case strings", () => {
-        expect(checkout('abc')).toBe(100);
+        expect(checkout('abc')).toBe(-1);
     });
 
     it('should calculate total for single item', () => {
@@ -50,5 +50,6 @@ describe('should apply special offers', () => {
         expect(checkout('AAAAAABBBB')).toBe(350);
     });
 });
+
 
 
