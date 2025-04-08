@@ -10,6 +10,7 @@ describe('should handle basic cases', () => {
     it('should return -1 for invalid skus', () => {
         expect(checkout('ABCDX')).toBe(-1);
         expect(checkout('.xyz')).toBe(-1);
+        expect(checkout(23)).toBe(-1);
     });
 
     it("should handle lower case strings", () => {
@@ -28,13 +29,25 @@ describe('should handle basic cases', () => {
         expect(checkout('AA')).toBe(100);
         expect(checkout('CCB')).toBe(70);
     });
+});
 
-    it('should apply special offers', () => {
-        expect(checkout('ABABA')).toBe(130 + 45);
+describe('should apply special offers', () => {
+    it('should apply single special offer', () => {
+        expect(checkout('AAA')).toBe(130);
+        expect(checkout('BB')).toBe(45);
     });
 
     it('should handle multiple special offers', () => {
         expect(checkout('AAABB')).toBe(130 + 45);
+        expect(checkout('ABABA')).toBe(130 + 45);
+    });
+
+    it('should handle multiple instances of special offers', () => {
+        expect(checkout('AAAAA')).toBe(230);
+        expect(checkout('AAAAAA')).toBe(260);
+        expect(checkout('BBB')).toBe(75);
+        expect(checkout('BBBB')).toBe(90);
+        expect(checkout('AAAAAABBBB')).toBe(350);
     });
 });
 
