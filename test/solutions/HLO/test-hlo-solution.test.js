@@ -6,4 +6,3 @@ describe('HelloSolution output Hello, World!', () => {
         expect(helloSolution.hello()).toBe('Hello, World!');
     });
 });
-
