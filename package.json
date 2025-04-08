@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "Warmup code to bootstrap the challenge",
   "scripts": {
-    "start": "node ./lib/send_command_to_server.js",
-    "test": "node ./node_modules/mocha/bin/mocha test/**/*.js",
+    "start": "deno run ./lib/send_command_to_server.js",
+    "test": "deno test",
     "coverage": "nyc --reporter=json-summary --reporter=text npm test"
   },
   "repository": {

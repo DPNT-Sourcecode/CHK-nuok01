@@ -1204,7 +1204,10 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@std/assert@1"
+      "jsr:@std/assert@1",
+      "jsr:@std/expect@1.0.4",
+      "npm:properties-reader@2.3.0",
+      "npm:tdl-client-nodejs@0.29.5"
     ],
     "packageJson": {
       "dependencies": [
