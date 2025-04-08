@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "Warmup code to bootstrap the challenge",
   "scripts": {
-    "start": "deno run ./lib/send_command_to_server.js",
-    "test": "deno test",
-    "coverage": "nyc --reporter=json-summary --reporter=text npm test"
+    "start": "node ./lib/send_command_to_server.js",
+    "test": "jest",
+    "coverage": "nyc --reporter=json-summary --reporter=text npm test",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "repository": {
     "type": "git",
