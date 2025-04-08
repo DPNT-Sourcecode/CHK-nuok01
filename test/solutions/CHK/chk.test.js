@@ -8,8 +8,8 @@ describe('should handle basic cases', () => {
     });
 
     it('should return -1 for invalid skus', () => {
-        expect(checkout('ABCDX')).toBe(-1);
         expect(checkout('.xyz')).toBe(-1);
+        expect(checkout('?')).toBe(-1);
         expect(checkout(23)).toBe(-1);
     });
 
@@ -131,8 +131,15 @@ describe('should apply special offers', () => {
     });
 
     it('handle special offers for K', () => {
-        expect(checkout('KK')).toBe(150);
+        expect(checkout('KK')).toBe(120);
         expect(checkout('KKK')).toBe(230);
+    });
+
+    it('handle special offers for N and M', () => {
+        expect(checkout('NNNM')).toBe(120);
+        expect(checkout('NNNNM')).toBe(160);
+        expect(checkout('NNNNNMM')).toBe(215);
+        expect(checkout('NNNNNNMMM')).toBe(255);
     });
 
     it('handle special offers for P', () => {
@@ -163,5 +170,6 @@ describe('should apply special offers', () => {
         expect(checkout('VVVVVV')).toBe(260);
     });
 });
+
 
 
